@@ -1,0 +1,39 @@
+base:
+  jwt:
+    secret: ""          # BASE_JWT_SECRET
+    access_ttl: 7200    # BASE_JWT_ACCESS_TTL  (2h)
+    refresh_ttl: 604800 # BASE_JWT_REFRESH_TTL (7d)
+  log:
+    filename: ./logs/service.log
+    level: debug
+    max_size: 32
+    max_backups: 5
+    max_age: 7
+    compress: false
+    enable_stdout: true
+  gateway:
+    enabled: true
+    ttl: 15
+    weight: 10
+    provider:
+      endpoints:        # BASE_GATEWAY_PROVIDER_ENDPOINTS
+        - 127.0.0.1:2379
+      username: ""    # BASE_GATEWAY_PROVIDER_USERNAME
+      password: ""    # BASE_GATEWAY_PROVIDER_PASSWORD
+      dial_timeout: 5
+      namespace: traefik
+  registry:
+    enabled: true
+    weight: 10
+    watch:
+      services: ["domaingo"]      # BASE_REGISTRY_WATCH_SERVICES
+      com_proj: []      # extra company+project scopes; empty = use flags company/project only
+        # - company: OtherCo
+        #   projects: [ProjectA, ProjectB]
+    provider:
+      endpoints:        # BASE_REGISTRY_PROVIDER_ENDPOINTS
+        - 127.0.0.1:2379
+      username: ""    # BASE_REGISTRY_PROVIDER_USERNAME
+      password: ""    # BASE_REGISTRY_PROVIDER_PASSWORD
+      dial_timeout: 5
+      load_balancer_strategy: 0
