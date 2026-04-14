@@ -3,7 +3,7 @@ module github.com/CXeon/traefik-support
 go 1.25.5
 
 require (
-	github.com/CXeon/tiles v0.0.0-20260401081407-a9c5efca490b
+	github.com/CXeon/tiles v0.0.0-20260414153347-06ed1b529f37
 	github.com/gin-gonic/gin v1.12.0
 )
 
@@ -92,4 +92,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/CXeon/tiles => ../tiles
+// replace github.com/CXeon/tiles => ../tiles

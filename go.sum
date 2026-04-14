@@ -39,6 +39,10 @@ cloud.google.com/go/storage v1.10.0/go.mod h1:FLPqc6j+Ki4BU591ie1oL6qBQGu2Bl/tZ9
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
+github.com/CXeon/tiles v0.0.0-20260414063747-0212c687c465 h1:OIrQ/ZJtQ6DD7Rt7bSwKxJY3au8S6qsNB5fRwq+PBNI=
+github.com/CXeon/tiles v0.0.0-20260414063747-0212c687c465/go.mod h1:Qzrmc8vTYaeB2SMviZCLUi3LsQhHuRdWpSPYHdtUhWM=
+github.com/CXeon/tiles v0.0.0-20260414153347-06ed1b529f37 h1:anqUG2Jp6G2t4j2MILeneX8MlKgYS2qLZo6lW8INSqA=
+github.com/CXeon/tiles v0.0.0-20260414153347-06ed1b529f37/go.mod h1:Qzrmc8vTYaeB2SMviZCLUi3LsQhHuRdWpSPYHdtUhWM=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/agiledragon/gomonkey/v2 v2.11.0 h1:5oxSgA+tC1xuGsrIorR+sYiziYltmJyEZ9qA25b6l5U=
 github.com/agiledragon/gomonkey/v2 v2.11.0/go.mod h1:ap1AmDzcVOAz1YpeJ3TCzIgstoaWLA6jbbgxfB4w2iY=

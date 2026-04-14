@@ -40,7 +40,7 @@ type App struct {
 	flags  config.Flags
 	logger tilesLogger.Logger
 
-	gateway  *infraGateway.Gateway
+	// gateway  *infraGateway.Gateway
 	registry *infraRegistry.Registry
 
 	srv *apihttp.Server
@@ -80,13 +80,14 @@ func (a *App) Init() error {
 	appLogger.GlobalLogger = a.logger
 
 	// 2. Gateway (if enabled)
-	if config.Config.Base.Gateway.Enabled {
-		gw, err := a.buildGateway()
-		if err != nil {
-			return err
-		}
-		a.gateway = gw
-	}
+
+	// if config.Config.Base.Gateway.Enabled {
+	// 	gw, err := a.buildGateway()
+	// 	if err != nil {
+	// 		return err
+	// 	}
+	// 	a.gateway = gw
+	// }
 
 	// 3. Registry (if enabled)
 	if config.Config.Base.Registry.Enabled {
@@ -124,11 +125,11 @@ func (a *App) Start() error {
 		}
 	}
 
-	if a.gateway != nil {
-		if err := a.gateway.Start(a.ctx); err != nil {
-			return err
-		}
-	}
+	// if a.gateway != nil {
+	// 	if err := a.gateway.Start(a.ctx); err != nil {
+	// 		return err
+	// 	}
+	// }
 
 	// Provision ForwardAuth middleware independently of gateway service registration.
 	// traefik-support is the auth endpoint; its middleware definition must exist in
@@ -188,11 +189,11 @@ func (a *App) Stop() (stopErr error) {
 			}
 		}
 
-		if a.gateway != nil {
-			if err := a.gateway.Stop(ctx); err != nil {
-				errs = append(errs, err)
-			}
-		}
+		// if a.gateway != nil {
+		// 	if err := a.gateway.Stop(ctx); err != nil {
+		// 		errs = append(errs, err)
+		// 	}
+		// }
 
 		if a.registry != nil {
 			if err := a.registry.Stop(ctx); err != nil {
@@ -376,7 +377,7 @@ func (a *App) provisionMiddleware() error {
 	middlewareName := fmt.Sprintf("%s.%s.%s.%s.ForwardAuth", cfg.Env, cfg.Cluster, cfg.Company, cfg.Project)
 	a.logger.Info("provisioning ForwardAuth middleware", tilesLogger.Fields{
 		"middleware": middlewareName,
-		"address":   cfg.Address,
+		"address":    cfg.Address,
 	})
 
 	if err := p.SetForwardAuth(a.ctx, cfg); err != nil {
